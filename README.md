@@ -97,17 +97,24 @@ uncover -q 'html:"ListBucketResult"' -pc config.yaml -silent | httpx -silent | n
 ![image](https://github.com/user-attachments/assets/1c42d75d-aea8-449d-b6fb-86993edd884b)
 # Detecting AWS Website
 ```
-nuclei -l domains.txt -id s3-detect
+nuclei -l targets.txt -id s3-detect
 ```
 ![image](https://github.com/user-attachments/assets/4a22b2ad-9629-4581-8b5e-593433a3439a)
 
-# Using Nuclei for S3 Bucket Enumeration
+# Using Nuclei / Cloud-Enum / S3Scanner for S3 Bucket Enum
 ```
 nuclei -id aws-s3-bucket-enum -var wordlist=fuzz.txt -rl 1 -lfa
 ```
 ![image](https://github.com/user-attachments/assets/3b7b4a5a-1d3c-484e-9b6c-85aa214fbd93)
-
-
+```
+python cloud_enum.py -k keyword -k keyword2
+python cloud_enum.py -kf fuzz.txt -qs
+```
+![image](https://github.com/user-attachments/assets/e981894c-b42e-4328-b4fa-33f44a6fba6a)
+```
+s3scanner -bucket-file fuzz.txt -provider aws -enumerate
+```
+![image](https://github.com/user-attachments/assets/4d5bfc7b-16de-40d1-8e1b-efdd060a6286)
 # Grayhatwarfare
 GrayhatWarfare allows users to find open AWS S3 buckets.
 ![image](https://github.com/user-attachments/assets/a2f65204-07ac-46c5-8bda-78bf845abb66)
