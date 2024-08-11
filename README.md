@@ -29,30 +29,25 @@ inurl:pastebin "AWS_ACCESS_KEY"
 ![image](https://github.com/user-attachments/assets/9ad909e9-2c52-48ff-a5f7-8917e2e9521c)
 ```
 rds.amazonaws.com password
-s3_access_key
-aws_access
-aws_access_key_id
-aws_bucket aws_key
-aws_secret
-aws_secret_key
-aws_token
-bucket_password
+aws_access_key_id=
+aws_bucket aws_key=
+aws_secret=
+aws_secret_access_key=
+aws_secret_key=
+aws_session_token=
+aws_token=
 bucketeer_aws_access_key_id
 bucketeer_aws_secret_access_key
 cache_s3_secret_key
-cloud_watch_aws_access_key
-filename:credentials
-aws_access_key_id
 lottie_s3_api_key
 lottie_s3_secret_key
-s3_access_key
-s3_access_key_id
-s3_key s3_key_app_logs
-s3_key_assets
-s3_secret_key
+s3_access_key=
+s3_access_key_id=
+s3_secret_key=
 sandbox_aws_access_key_id
 sandbox_aws_secret_access_key
 secret_key aws
+aws_secretaccesskey=
 secretkey aws
 ```
 The process of searching manually for each keyword can be automated using **githubDorker** as shown below:
@@ -68,17 +63,8 @@ According to Shodan, the data displayed are from the past 30 days of monitored d
 html:"AWS_ACCESS_KEY_ID"
 html:"AWS_SECRET_ACCESS_KEY"
 html:"AWS_SESSION_TOKEN"
-html:"istBucketResult"
+html:"ListBucketResult"
 title:"AWS S3 Explorer"
-html:"AWS Elastic Beanstalk overview"
-html:"OpenSearch Dashboards"
-"X-Amz-Server-Side-Encryption"
-title:"EC2 Instance Information"
-http.title:"Amazon Cognito Developer Authentication Sample"
-"Server: EC2ws"
-title:"AWS X-Ray Sample Application"
-html:"Amazon EC2 Status"
-html:"AWS EC2 Auto Scaling Lab"
 ```
 # Censys Query
 ```
@@ -96,11 +82,6 @@ AWS_SESSION_TOKEN
 body="AWS_ACCESS_KEY_ID"
 body="AWS_SECRET_ACCESS_KEY"
 body="AWS_SESSION_TOKEN"
-app="amazon-AWS-ELB"
-app="amazon-AWS-Elastic-Beanstalk"
-app="amazon-AWS-EC2"
-app="amazon-AWS-WAF"
-app="amazon-ECS"
 app="amazon-AmazonS3"
 body="ListBucketResult"
 ```
