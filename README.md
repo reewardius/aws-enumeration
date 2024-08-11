@@ -1,4 +1,4 @@
-# AWS Enumeration
+![image](https://github.com/user-attachments/assets/bdbaa0bd-d7be-4281-aeec-4a8277f947dc)# AWS Enumeration
 We utilize various search engines to conduct OSINT and gather information about leaked AWS Access & Secret Keys, as well as AWS S3 Bucket names that have been cached by crawlers.
 # Javascript Files
 Analyzing Javascript files for AWS Access/Secret key Disclosure & S3 Buckets
@@ -55,6 +55,13 @@ The process of searching manually for each keyword can be automated using **gith
 python githubDorker.py -t <github-token> -day 7 -o results.txt
 ```
 ![image](https://github.com/user-attachments/assets/5e04a139-f9c3-4f4a-bb17-6d950c649056)
+# grep.app
+```
+aws_access_key_id\s*=\s*['"]?AKIA[0-9A-Z]{16}['"]?
+aws_secret_access_key="[A-Za-z0-9+/=]{40}"
+AKIA[0-9A-Z]{16}
+```
+![image](https://github.com/user-attachments/assets/8db9fd1a-f5c4-4eb8-870d-4f058f8ffc05)
 
 # Shodan Query
 According to Shodan, the data displayed are from the past 30 days of monitored data on the internet.
