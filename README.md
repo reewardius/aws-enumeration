@@ -1,12 +1,16 @@
 # AWS Enumeration
 We utilize various search engines to conduct OSINT and gather information about leaked AWS Access & Secret Keys, as well as AWS S3 Bucket names that have been cached by crawlers.
 # Javascript Files
-Analyzing Javascript files for AWS Access/Secret key Disclosure
+Analyzing Javascript files for AWS Access/Secret key Disclosure & S3 Buckets
 ```
 getjs --input targets.txt --complete --output js_links.txt
-nuclei -l js_links.txt -t aws-access-secret-key.yaml -silent -o aws-results.txt
+nuclei -l js_links.txt -t aws-access-secret-key.yaml -silent -o aws-secrets.txt
 ```
 ![image](https://github.com/user-attachments/assets/c0b58523-c277-439e-b4fa-e7d2e541a659)
+```
+nuclei -l js_links.txt -t s3-bucket-detect.yaml -silent -o aws-s3-buckets.txt
+```
+![image](https://github.com/user-attachments/assets/874ca92f-94d0-42e3-9367-0f66a8613675)
 
 
 # Google Dorks
