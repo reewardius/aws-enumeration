@@ -17,8 +17,6 @@ inurl:pastebin "AWS_ACCESS_KEY"
 ```
 rds.amazonaws.com password
 s3_access_key
-amazon_secret_access_key
-amazonaws
 aws_access
 aws_access_key_id
 aws_bucket aws_key
@@ -32,7 +30,6 @@ cache_s3_secret_key
 cloud_watch_aws_access_key
 filename:credentials
 aws_access_key_id
-filename:s3cfg
 lottie_s3_api_key
 lottie_s3_secret_key
 s3_access_key
@@ -44,8 +41,6 @@ sandbox_aws_access_key_id
 sandbox_aws_secret_access_key
 secret_key aws
 secretkey aws
-filename:.bash_profile
-aws filename:.s3cfg
 ```
 # Shodan Query
 According to Shodan, the data displayed are from the past 30 days of monitored data on the internet.
