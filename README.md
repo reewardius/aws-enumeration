@@ -4,11 +4,11 @@ We utilize various search engines to conduct OSINT and gather information about 
 Analyzing Javascript files for AWS Access/Secret key Disclosure & S3 Buckets
 ```
 getjs --input targets.txt --complete --output js_links.txt
-nuclei -l js_links.txt -t aws-access-secret-key.yaml -silent -o aws-secrets.txt
+nuclei -l js_links.txt -t templates/aws-access-secret-key.yaml -silent -o aws-secrets.txt
 ```
 ![image](https://github.com/user-attachments/assets/c0b58523-c277-439e-b4fa-e7d2e541a659)
 ```
-nuclei -l js_links.txt -t s3-bucket-detect.yaml -silent -o aws-s3-buckets.txt
+nuclei -l js_links.txt -t templates/s3-bucket-detect.yaml -silent -o aws-s3-buckets.txt
 ```
 ![image](https://github.com/user-attachments/assets/874ca92f-94d0-42e3-9367-0f66a8613675)
 
@@ -91,7 +91,7 @@ uncover -q 'html:"ListBucketResult"' -pc config.yaml -silent | httpx -silent | n
 ![image](https://github.com/user-attachments/assets/1c42d75d-aea8-449d-b6fb-86993edd884b)
 ```
 uncover -q 'html:"AWS_ACCESS_KEY_ID"' -pc config.yaml -silent -o uncover.txt
-nuclei -l uncover.txt -t aws-access-secret-key.yaml
+nuclei -l uncover.txt -t templates/aws-access-secret-key.yaml
 ```
 ![image](https://github.com/user-attachments/assets/a0a33f95-1a4b-4eb8-a497-8cd328b0770e)
 
