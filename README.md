@@ -42,6 +42,12 @@ sandbox_aws_secret_access_key
 secret_key aws
 secretkey aws
 ```
+The process of searching manually for each keyword can be automated using **githubDorker** as shown below:
+```
+python githubDorker.py -t <github-token> -day 1-30 -o results.txt
+```
+![image](https://github.com/user-attachments/assets/5e04a139-f9c3-4f4a-bb17-6d950c649056)
+
 # Shodan Query
 According to Shodan, the data displayed are from the past 30 days of monitored data on the internet.
 ![image](https://github.com/user-attachments/assets/2da48880-8619-4c88-93d7-7cf088400988)
