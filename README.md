@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/bdbaa0bd-d7be-4281-aeec-4a8277f947dc)# AWS Enumeration
+# AWS Enumeration
 We utilize various search engines to conduct OSINT and gather information about leaked AWS Access & Secret Keys, as well as AWS S3 Bucket names that have been cached by crawlers.
 # Javascript Files
 Analyzing Javascript files for AWS Access/Secret key Disclosure & S3 Buckets
