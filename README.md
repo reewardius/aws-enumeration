@@ -64,7 +64,6 @@ html:"AWS_ACCESS_KEY_ID"
 html:"AWS_SECRET_ACCESS_KEY"
 html:"AWS_SESSION_TOKEN"
 html:"ListBucketResult"
-title:"AWS S3 Explorer"
 ```
 # Censys Query
 ```
