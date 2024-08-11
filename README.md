@@ -50,7 +50,7 @@ secret_key aws
 aws_secretaccesskey=
 secretkey aws
 ```
-The process of searching manually for each keyword can be automated using **githubDorker** as shown below:
+The process of searching manually for each keyword can be automated using **github-aws-secrets-scanner** as shown below:
 ```
 python github-aws-secrets-scanner.py -t <github-token> -day 7 -o results.txt
 ```
