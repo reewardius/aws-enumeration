@@ -1,5 +1,14 @@
 # AWS Enumeration
 We utilize various search engines to conduct OSINT and gather information about leaked AWS Access & Secret Keys, as well as AWS S3 Bucket names that have been cached by crawlers.
+# Javascript Files
+Analyzing Javascript files for AWS Access/Secret key Disclosure
+```
+getjs --input targets.txt --complete --output js_links.txt
+nuclei -l js_links.txt -t aws-access-secret-key.yaml -silent -o aws-results.txt
+```
+![image](https://github.com/user-attachments/assets/c0b58523-c277-439e-b4fa-e7d2e541a659)
+
+
 # Google Dorks
 ![image](https://github.com/user-attachments/assets/23a943cf-3451-49b8-a6d0-8d9ed72c5b05)
 
@@ -96,6 +105,12 @@ body="ListBucketResult"
 uncover -q 'html:"ListBucketResult"' -pc config.yaml -silent | httpx -silent | nuclei -id aws-object-listing -silent
 ```
 ![image](https://github.com/user-attachments/assets/1c42d75d-aea8-449d-b6fb-86993edd884b)
+```
+uncover -q 'html:"AWS_ACCESS_KEY_ID"' -pc config.yaml -silent -o uncover.txt
+nuclei -l uncover.txt -t aws-access-secret-key.yaml
+```
+![image](https://github.com/user-attachments/assets/a0a33f95-1a4b-4eb8-a497-8cd328b0770e)
+
 # Detecting AWS Website
 ```
 nuclei -l targets.txt -id s3-detect
