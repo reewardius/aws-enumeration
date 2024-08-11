@@ -52,7 +52,7 @@ secretkey aws
 ```
 The process of searching manually for each keyword can be automated using **githubDorker** as shown below:
 ```
-python githubDorker.py -t <github-token> -day 7 -o results.txt
+python github-aws-secrets-scanner.py -t <github-token> -day 7 -o results.txt
 ```
 ![image](https://github.com/user-attachments/assets/5e04a139-f9c3-4f4a-bb17-6d950c649056)
 # grep.app
