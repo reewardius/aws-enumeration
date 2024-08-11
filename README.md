@@ -17,7 +17,7 @@ inurl:pastebin "AWS_ACCESS_KEY"
 ```
 rds.amazonaws.com password
 s3_access_key
-Key:amazon_secret_access_key
+amazon_secret_access_key
 amazonaws
 aws_access
 aws_access_key_id
