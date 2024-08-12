@@ -22,7 +22,7 @@ site:s3.amazonaws.com "index of /"
 inurl:s3.amazonaws.com intitle:"AWS S3 Explorer"
 site:http://s3.amazonaws.com intitle:index.of.bucket ""
 site:.s3.amazonaws.com "Company"
-inurl:gitlab "AWS_SECRET_KEY" "
+inurl:gitlab "AWS_SECRET_KEY"
 inurl:pastebin "AWS_ACCESS_KEY"
 ```
 # Github Dorks
