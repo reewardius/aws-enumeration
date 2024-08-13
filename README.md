@@ -63,6 +63,11 @@ AKIA[0-9A-Z]{16}
 ```
 ![image](https://github.com/user-attachments/assets/8db9fd1a-f5c4-4eb8-870d-4f058f8ffc05)
 
+# Hugging Face
+```
+aws_secret_access_key=
+```
+![image](https://github.com/user-attachments/assets/4ed0f9ec-e1f4-4565-a77f-c07702be7515)
 # Shodan Query
 According to Shodan, the data displayed are from the past 30 days of monitored data on the internet.
 ![image](https://github.com/user-attachments/assets/2da48880-8619-4c88-93d7-7cf088400988)
