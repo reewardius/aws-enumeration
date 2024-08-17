@@ -16,3 +16,4 @@ Google IMDS
 ```
 curl -H "Metadata-Flavor:Google" http://169.254.169.254/computeMetadata/v1/instance/service-accounts/
 ```
+![image](https://github.com/user-attachments/assets/79e30468-9c86-4e79-8e3d-8b098f4b60c7)
