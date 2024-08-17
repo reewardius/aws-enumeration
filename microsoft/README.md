@@ -9,3 +9,18 @@ Microsoft Cloud Services
 *.blob.core.windows.net
 *.database.windows.net
 ```
+Azure IMDS
+```
+curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true
+```
+![image](https://github.com/user-attachments/assets/60bb0912-fe8a-4952-ac24-7740761da71f)
+
+Azure Resource
+```
+$accessToken = ''
+$accountId = ''
+Connect-AzAccount -AccessToken $accessToken -AccountId $accountId
+
+Get-AzResource
+```
+![image](https://github.com/user-attachments/assets/366b10b1-6d66-4219-9517-eb8e52c6d0c5)
