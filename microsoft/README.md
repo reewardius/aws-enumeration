@@ -15,6 +15,13 @@ curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-
 ```
 ![image](https://github.com/user-attachments/assets/60bb0912-fe8a-4952-ac24-7740761da71f)
 
+Kubenv
+```
+env && printenv
+set
+```
+![image](https://github.com/user-attachments/assets/30a3773d-f65e-46c8-8535-53880094e632)
+
 Azure Resource
 ```
 $accessToken = ''
