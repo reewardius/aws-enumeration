@@ -3,6 +3,9 @@ We utilize various search engines to conduct OSINT and gather information about 
 
 ![image](https://github.com/user-attachments/assets/49641863-9235-4820-a135-009bc4ab4159)
 
+![image](https://github.com/user-attachments/assets/b6b68768-7d03-41df-a3d1-3728a63fae74)
+
+
 # Javascript Files
 Analyzing Javascript files for AWS Access/Secret key Disclosure & S3 Buckets
 ```
@@ -28,6 +31,7 @@ site:.s3.amazonaws.com "Company"
 inurl:gitlab "AWS_SECRET_KEY"
 inurl:pastebin "AWS_ACCESS_KEY"
 ```
+
 # Github Dorks
 ![image](https://github.com/user-attachments/assets/9ad909e9-2c52-48ff-a5f7-8917e2e9521c)
 ```
