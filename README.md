@@ -5,7 +5,7 @@ AWS Cloud Services
 ```
 *.s3.amazonaws.co
 *.awsapps.com
-*.https://[api-id].execute-api.[region].amazonaws.com/[stage]/
+https://[api-id].execute-api.[region].amazonaws.com/[stage]/
 ```
 
 # Javascript Files
