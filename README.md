@@ -3,9 +3,9 @@ We utilize various search engines to conduct OSINT and gather information about 
 
 AWS Cloud Services
 ```
-*. s3.amazonaws.co
-*. awsapps.com
-*. https://[api-id].execute-api.[region].amazonaws.com/[stage]/
+*.s3.amazonaws.co
+*.awsapps.com
+*.https://[api-id].execute-api.[region].amazonaws.com/[stage]/
 ```
 
 # Javascript Files
