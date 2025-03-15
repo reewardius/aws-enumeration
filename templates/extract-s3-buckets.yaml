@@ -5,6 +5,8 @@ info:
   severity: info
   description: |
     Extracts S3 bucket identifiers and links from responses including image, href, and script sources.
+  tags: aws,amazon
+  
 http:
   - method: GET
     path:
