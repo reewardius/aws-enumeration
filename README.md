@@ -1,14 +1,14 @@
 # AWS Enumeration
 We utilize various search engines to conduct OSINT and gather information about leaked AWS Access & Secret Keys, as well as AWS S3 Bucket names that have been cached by crawlers.
 
-AWS Cloud Services
+#### AWS Cloud Services
 ```
 *.s3.amazonaws.co
 *.awsapps.com
 https://[api-id].execute-api.[region].amazonaws.com/[stage]/
 ```
 
-# Javascript Files
+####  Javascript Files
 Analyzing Javascript files for AWS Access/Secret key Disclosure & S3 Buckets
 ```
 getjs --input targets.txt --complete --output js_links.txt
@@ -21,7 +21,7 @@ nuclei -l js_links.txt -t templates/s3-bucket-detect.yaml -silent -o aws-s3-buck
 ![image](https://github.com/user-attachments/assets/874ca92f-94d0-42e3-9367-0f66a8613675)
 
 
-# Google Dorks
+####  Google Dorks
 ![image](https://github.com/user-attachments/assets/23a943cf-3451-49b8-a6d0-8d9ed72c5b05)
 
 The below google dorks can be used to extract the information related with AWS S3:
@@ -34,7 +34,7 @@ inurl:gitlab "AWS_SECRET_KEY"
 inurl:pastebin "AWS_ACCESS_KEY"
 ```
 
-# Github Dorks
+####  Github Dorks
 ![image](https://github.com/user-attachments/assets/9ad909e9-2c52-48ff-a5f7-8917e2e9521c)
 ```
 rds.amazonaws.com password
@@ -64,7 +64,7 @@ The process of searching manually for each keyword can be automated using **gith
 python github-aws-secrets-scanner.py -t <github-token> -day 7 -o results.txt
 ```
 ![image](https://github.com/user-attachments/assets/5e04a139-f9c3-4f4a-bb17-6d950c649056)
-# grep.app
+####  grep.app
 ```
 aws_access_key_id\s*=\s*['"]?AKIA[0-9A-Z]{16}['"]?
 aws_secret_access_key="[A-Za-z0-9+/=]{40}"
@@ -72,12 +72,12 @@ AKIA[0-9A-Z]{16}
 ```
 ![image](https://github.com/user-attachments/assets/8db9fd1a-f5c4-4eb8-870d-4f058f8ffc05)
 
-# Hugging Face
+####  Hugging Face
 ```
 aws_secret_access_key=
 ```
 ![image](https://github.com/user-attachments/assets/4ed0f9ec-e1f4-4565-a77f-c07702be7515)
-# Shodan Query
+####  Shodan Query
 According to Shodan, the data displayed are from the past 30 days of monitored data on the internet.
 ![image](https://github.com/user-attachments/assets/2da48880-8619-4c88-93d7-7cf088400988)
 ```
@@ -86,7 +86,7 @@ html:"AWS_SECRET_ACCESS_KEY"
 html:"AWS_SESSION_TOKEN"
 html:"ListBucketResult"
 ```
-# Censys Query
+####  Censys Query
 ```
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
@@ -96,7 +96,7 @@ AWS_SESSION_TOKEN
 
 ![image](https://github.com/user-attachments/assets/7a44bd00-6a3f-4b8f-acad-76f3054bccba)
 
-# Fofa Query
+####  Fofa Query
 ![image](https://github.com/user-attachments/assets/726c3616-3b20-4200-9fe7-ddb38890edd6)
 ```
 body="AWS_ACCESS_KEY_ID"
@@ -105,7 +105,7 @@ body="AWS_SESSION_TOKEN"
 app="amazon-AmazonS3"
 body="ListBucketResult"
 ```
-# Using Uncover with Nuclei
+####  Using Uncover with Nuclei
 ```
 uncover -q 'html:"ListBucketResult"' -pc config.yaml -silent | httpx -silent | nuclei -id aws-object-listing -silent
 ```
@@ -116,13 +116,19 @@ nuclei -l uncover.txt -t templates/aws-access-secret-key.yaml
 ```
 ![image](https://github.com/user-attachments/assets/a0a33f95-1a4b-4eb8-a497-8cd328b0770e)
 
-# Detecting AWS Website
+####  Detecting AWS Website
 ```
-nuclei -l targets.txt -id s3-detect
+nuclei -l targets.txt -id s3-detect -o s3-sites.txt
 ```
 ![image](https://github.com/user-attachments/assets/4a22b2ad-9629-4581-8b5e-593433a3439a)
 
-# Using Nuclei / Cloud-Enum / S3Scanner for S3 Bucket Enum
+#### AWS Object Listing
+```
+awk '{ match($0, /(https?:\/\/[^\/% ]+)/, m); if (m[1] != "") print m[1] }' s3-sites.txt > s3-targets.txt
+nuclei -l s3-targets.txt -t templates/aws-object-listing.yaml
+```
+
+####  Using Nuclei / Cloud-Enum / S3Scanner for S3 Bucket Enum
 ```
 nuclei -id aws-s3-bucket-enum -var wordlist=fuzz.txt -rl 1 -lfa
 ```
@@ -136,11 +142,11 @@ python cloud_enum.py -kf fuzz.txt -qs
 s3scanner -bucket-file fuzz.txt -provider aws -enumerate
 ```
 ![image](https://github.com/user-attachments/assets/4d5bfc7b-16de-40d1-8e1b-efdd060a6286)
-# Grayhatwarfare
+####  Grayhatwarfare
 GrayhatWarfare allows users to find open AWS S3 buckets.
 ![image](https://github.com/user-attachments/assets/a2f65204-07ac-46c5-8bda-78bf845abb66)
 
-# Other Services
+####  Other Services
 ```
 https://codepen.io/
 https://publicwww.com/
