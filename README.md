@@ -128,6 +128,13 @@ awk '{ match($0, /(https?:\/\/[^\/% ]+)/, m); if (m[1] != "") print m[1] }' s3-s
 nuclei -l s3-targets.txt -t templates/aws-object-listing.yaml
 ```
 
+#### Oneliner to find S3 buckets
+```
+subfinder -d canva.com -all -silent | httprobe > hosts; meg -d 1000 -v /; gf s3-buckets out/
+```
+![image](https://github.com/user-attachments/assets/435ab3b5-73b1-433b-8224-0c59c68ae617)
+
+
 ####  Using Nuclei / Cloud-Enum / S3Scanner for S3 Bucket Enum
 ```
 nuclei -id aws-s3-bucket-enum -var wordlist=fuzz.txt -rl 1 -lfa
@@ -139,7 +146,7 @@ python cloud_enum.py -kf fuzz.txt -qs
 ```
 ![image](https://github.com/user-attachments/assets/e981894c-b42e-4328-b4fa-33f44a6fba6a)
 ```
-s3scanner -bucket-file fuzz.txt -provider aws -enumerate
+s3scanner -bucket-file fuzz.txt -provider aws
 ```
 ![image](https://github.com/user-attachments/assets/4d5bfc7b-16de-40d1-8e1b-efdd060a6286)
 ####  Grayhatwarfare
